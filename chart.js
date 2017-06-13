@@ -48,7 +48,7 @@ var strip = function(string) {
 };
 
 // dimensions
-var margin = {top:10, bottom:10, left:180, right:30};
+var margin = {top:10, bottom:10, left:180, right:10};
 
 
 // WHAT TO DO WITH DATA???
@@ -296,10 +296,8 @@ m.renderChart = function() {
                     d3.select('#'+strip(d.event))
                         .style('filter', 'url(#brightness)');
                         // .classed('brighten', true);
-                    tooltip.select('img').on('load', function() {
-                        tooltip.transition()
-                                .style('opacity', 1.0);
-                    });
+                    tooltip.transition()
+                            .style('opacity', 1.0);
                 })
                 .on('mouseout', function(d) {
                     d3.select('#'+strip(d.event))
