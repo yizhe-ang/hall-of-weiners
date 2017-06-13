@@ -48,7 +48,7 @@ var strip = function(string) {
 };
 
 // dimensions
-var margin = {top:10, bottom:10, left:180, right:10};
+var margin = {top:10, bottom:10, left:180, right:50};
 
 
 // WHAT TO DO WITH DATA???
@@ -282,6 +282,9 @@ m.renderChart = function() {
                             .attr('height', '50px')
                             .style('opacity', 1.0);
 
+                            // .style('opacity', 0);
+                    // img.transition()
+                    //     .style('opacity', 1.0);
                     // setting the positions
                     var w = parseInt(tooltip.style('width'));
                     tooltip.style('left', (window.pageXOffset+matrix.e-w/2-10)+'px')
