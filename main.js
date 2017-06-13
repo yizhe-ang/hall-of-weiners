@@ -18,10 +18,14 @@
     };
     function ready(data) {
         // PREPARING THE DATA
+        m.data = data;
+        m.data.forEach(function(d) {
+            d.images = JSON.parse(d.images.replace(/'/g, '"'));
+        });
         // Nests the data according to player name
         m.data = d3.nest()
             .key(function(d) { return d.name; })
-            .entries(data);
+            .entries(m.data);
 
         // Calculate the placement points
         m.data.forEach(function(d) {
@@ -38,12 +42,12 @@
         m.data.sort(function(a, b) {
             return (b.values.length - a.values.length) || (b.points - a.points);
         });
-        console.log(m.data);
+        // console.log(m.data);
         // Filter for participation in >50% of events
         m.data = m.data.filter(function(d) {
             return d.values.length >= 6;
         });
-        console.log(m.data);
+        // console.log(m.data);
 
 
         // Render header

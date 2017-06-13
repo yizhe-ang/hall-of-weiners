@@ -278,7 +278,7 @@ m.renderChart = function() {
                     // tooltip.select('p')
                     //         .text(d.team);
                     tooltip.select('img')
-                            .attr('src', 'images/'+JSON.parse(d.images.replace(/'/g, '"'))[0])
+                            .attr('src', 'images/'+ d.images[0])
                             .attr('height', '50px');
                     // setting the positions
                     var w = parseInt(tooltip.style('width'));
