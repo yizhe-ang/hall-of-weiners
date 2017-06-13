@@ -302,7 +302,7 @@ m.renderChart = function() {
                     d3.select('#'+strip(d.event))
                         .style('filter', null);
                         // .classed('brighten', false);
-                    tooltip.select('img')
+                    tooltip.select('img').transition()
                             .style('opacity', 0);
                     tooltip.transition()
                             .style('opacity', 0);
