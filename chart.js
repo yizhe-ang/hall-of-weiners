@@ -48,7 +48,7 @@ var strip = function(string) {
 };
 
 // dimensions
-var margin = {top:10, bottom:10, left:180, right:10};
+var margin = {top:20, bottom:10, left:180, right:10};
 
 
 // WHAT TO DO WITH DATA???
@@ -279,8 +279,8 @@ m.renderChart = function() {
                     //         .text(d.team);
                     tooltip.select('img')
                             .attr('src', 'images/'+ d.images[0])
-                            .attr('height', '50px');
-                            // .style('opacity', 1.0);
+                            .attr('height', '50px')
+                            .style('opacity', 1.0);
 
                             // .style('opacity', 0);
                     // img.transition()
