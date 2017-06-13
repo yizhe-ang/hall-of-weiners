@@ -297,10 +297,9 @@ m.renderChart = function() {
                 })
                 .on('mouseout', function(d) {
                     d3.select('#'+strip(d.event))
-                        .transition()
                         .style('filter', null);
                         // .classed('brighten', false);
-                    tooltip
+                    tooltip.transition()
                             .style('opacity', 0);
                 });
 
