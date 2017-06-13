@@ -277,16 +277,17 @@ m.renderChart = function() {
                             .text(d.placement);
                     // tooltip.select('p')
                     //         .text(d.team);
-                    var img = tooltip.select('img')
+                    tooltip.select('img')
                             .attr('src', 'images/'+ d.images[0])
-                            .attr('height', '50px')
-                            .style('opacity', 0);
-                    img.transition()
-                        .style('opacity', 1.0);
+                            .attr('height', '50px');
+                            // .style('opacity', 0);
+                    // img.transition()
+                    //     .style('opacity', 1.0);
                     // setting the positions
                     var w = parseInt(tooltip.style('width'));
                     tooltip.style('left', (window.pageXOffset+matrix.e-w/2-10)+'px')
                             .style('top', (window.pageYOffset+matrix.f+15)+'px')
+                            .transition()
                             .style('opacity', 1.0);
 
                     // light up the corresponding event header
@@ -295,10 +296,12 @@ m.renderChart = function() {
                         // .classed('brighten', true);
                 })
                 .on('mouseout', function(d) {
-                    tooltip.style('opacity', 0);
                     d3.select('#'+strip(d.event))
+                        .transition()
                         .style('filter', null);
                         // .classed('brighten', false);
+                    tooltip
+                            .style('opacity', 0);
                 });
 
     // drawing the lines
@@ -336,25 +339,25 @@ m.renderChart = function() {
 
     // participation tally indicator
     // determine positions of the tally
-    var tally = d3.select('#tally')
-        .style('left', (window.innerWidth - width)/2 + width - 40 + 'px')
-        .style('top', '150px')
-        .text('10');
+    // var tally = d3.select('#tally')
+    //     .style('left', (window.innerWidth - width)/2 + width - 40 + 'px')
+    //     .style('top', '150px')
+    //     .text('10');
 
-    d3.select('window').on('scroll', function() {
-        console.log('scrolling!');
-        var tableRows = svg.selectAll('.table-row');
-        var scrollTop = window.scrollTop();
-        console.log(scrollTop);
-
-        tableRows.each(function(d) {
-            var row = d3.select(this);
-            var rowTop = row.offset().top;
-            if (rowTop - scrollTop === 0) {
-                tally.text(d.values.length);
-            }
-        });
-    });
+    // d3.select('window').on('scroll', function() {
+    //     console.log('scrolling!');
+    //     var tableRows = svg.selectAll('.table-row');
+    //     var scrollTop = window.scrollTop();
+    //     console.log(scrollTop);
+    //
+    //     tableRows.each(function(d) {
+    //         var row = d3.select(this);
+    //         var rowTop = row.offset().top;
+    //         if (rowTop - scrollTop === 0) {
+    //             tally.text(d.values.length);
+    //         }
+    //     });
+    // });
 };
 
 
