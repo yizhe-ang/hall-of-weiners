@@ -278,7 +278,6 @@ m.renderChart = function() {
                     // tooltip.select('p')
                     //         .text(d.team);
                     tooltip.select('img')
-                            .style('opacity', 0)
                             .attr('src', 'images/'+ d.images[0])
                             .attr('height', '50px')
                             .style('opacity', 1.0);
@@ -303,6 +302,8 @@ m.renderChart = function() {
                     d3.select('#'+strip(d.event))
                         .style('filter', null);
                         // .classed('brighten', false);
+                    tooltip.select('img')
+                            .style('opacity', 0);
                     tooltip.transition()
                             .style('opacity', 0);
                 });
