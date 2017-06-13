@@ -279,16 +279,19 @@ m.renderChart = function() {
                     //         .text(d.team);
                     tooltip.select('img')
                             .attr('src', 'images/'+ d.images[0])
-                            .attr('height', '50px');
+                            .attr('height', '50px')
+                            .on('load', function() {
+                                tooltip.transition()
+                                        .style('opacity', 1.0);
+                            });
                             // .style('opacity', 0);
                     // img.transition()
                     //     .style('opacity', 1.0);
                     // setting the positions
                     var w = parseInt(tooltip.style('width'));
                     tooltip.style('left', (window.pageXOffset+matrix.e-w/2-10)+'px')
-                            .style('top', (window.pageYOffset+matrix.f+15)+'px')
-                            .transition()
-                            .style('opacity', 1.0);
+                            .style('top', (window.pageYOffset+matrix.f+15)+'px');
+
 
                     // light up the corresponding event header
                     d3.select('#'+strip(d.event))
