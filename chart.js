@@ -48,7 +48,7 @@ var strip = function(string) {
 };
 
 // dimensions
-var margin = {top:10, bottom:10, left:180, right:50};
+var margin = {top:10, bottom:10, left:180, right:10};
 
 
 // WHAT TO DO WITH DATA???
