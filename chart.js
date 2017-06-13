@@ -279,8 +279,8 @@ m.renderChart = function() {
                     //         .text(d.team);
                     tooltip.select('img')
                             .attr('src', 'images/'+ d.images[0])
-                            .attr('height', '50px')
-                            .style('opacity', 1.0);
+                            .attr('height', '50px');
+                            // .style('opacity', 1.0);
 
                             // .style('opacity', 0);
                     // img.transition()
