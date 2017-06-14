@@ -62,12 +62,17 @@ h1 {
 }
 @media screen and (max-width: 650px) {
     h1 {
-        font-size: 32px;
+        font-size: 48px;
     }
 }
 h1 span {
     font-size:32px;
     font-style:italic;
+}
+@media screen and (max-width: 650px) {
+    h1 span {
+        font-size: 24px;
+    }
 }
 
 #header-tooltip {
@@ -111,6 +116,11 @@ h1 span {
     height:auto;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     background-color:#FAFAFA;
+}
+@media screen and (max-width: 650px) {
+    #content {
+        top: 118px;
+    }
 }
 .table-row {
     -webkit-transition: opacity 0.2s;
