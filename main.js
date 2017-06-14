@@ -47,7 +47,7 @@
         m.data = m.data.filter(function(d) {
             return d.values.length >= 6;
         });
-        // console.log(m.data);
+        console.log(m.data);
 
 
         // Render header

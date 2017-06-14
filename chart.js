@@ -160,8 +160,8 @@ m.renderChart = function() {
     //     return color((numberEvents-6)/5);
     // };
     var rowColor = d3.scaleOrdinal()
-                        .domain([6, 7, 8, 9, 10])
-                        .range(['white',"#ffffe5","#fff7bc","#fee391","#fec44f"]);
+                        .domain([6, 7, 8, 9, 10, 11])
+                        .range(['white',"#ffffe5","#fff7bc","#fee391","#fec44f", "#fe9929"]);
 
 
     var svg = chartHolder.append('svg')
