@@ -1,8 +1,9 @@
 body {
     padding: 0;
     margin: 0;
-    background-image:url('images/contemporary_china.png');
+    /*background-image:url('images/contemporary_china.png');*/
     position: relative;
+    /*background-color: #E0E0E0;*/
 }
 
 /* HEADER SHIZZ */
@@ -60,20 +61,20 @@ h1 {
     color:#FFF9C4;
     opacity: 0;
 }
-@media screen and (max-width: 650px) {
+/*@media screen and (max-width: 650px) {
     h1 {
         font-size: 48px;
     }
-}
+}*/
 h1 span {
     font-size:32px;
     font-style:italic;
 }
-@media screen and (max-width: 650px) {
+/*@media screen and (max-width: 650px) {
     h1 span {
         font-size: 24px;
     }
-}
+}*/
 
 #header-tooltip {
     position:absolute;
@@ -115,13 +116,13 @@ h1 span {
     margin-bottom: 700px;
     height:auto;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    background-color:#FAFAFA;
+    background-color:white;
 }
-@media screen and (max-width: 650px) {
+/*@media screen and (max-width: 650px) {
     #content {
         top: 118px;
     }
-}
+}*/
 .table-row {
     -webkit-transition: opacity 0.2s;
     transition: opacity 0.2s;

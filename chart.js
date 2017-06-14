@@ -137,6 +137,8 @@ m.renderHeader = function() {
         // });
 
 
+
+
 };
 
 
@@ -182,10 +184,10 @@ m.renderChart = function() {
         //     d3.select(this).select('rect')
         //         .attr('fill', '#F5F5F5');
         // })
-        .on('mouseout', function(d) {
-            d3.select(this).select('rect')
-                .attr('fill', 'white');
-        })
+        // .on('mouseout', function(d) {
+        //     d3.select(this).select('rect')
+        //         .attr('fill', 'white');
+        // })
         // .on('mouseover', function(d) {
         //     d3.selectAll('.table-row')
         //         .attr('opacity', 0.3);
@@ -199,7 +201,7 @@ m.renderChart = function() {
         .append('rect') // color of the rows
         .attr('width', width)
         .attr('height', rowHeight)
-        .attr('fill', 'white');
+        .attr('fill', 'none');
         // .attr('fill', function(d) { return rowColor(d); });
 
     svg.selectAll('.table-row')
@@ -321,8 +323,8 @@ m.renderChart = function() {
             .attr('y2', rowHeight*i)
             .attr('stroke', '#9E9D24')
             // .attr('stroke', 'black')
-            // .attr('opacity', 0.2)
-            .attr('stroke-width', 0.3);
+            .attr('opacity', 0.4)
+            .attr('stroke-width', 1.0);
     });
     // the first line (vertical)
     svg.append('line')
@@ -369,7 +371,7 @@ m.renderChart = function() {
 
 
 
-// RESIZE FUNCTION
+// // RESIZE FUNCTION
 // d3.select(window).on('resize', function() {
 //     console.log('resizing!');
 //     // Render header
@@ -377,6 +379,15 @@ m.renderChart = function() {
 //     // Render chart
 //     m.renderChart();
 // });
+
+// HIDING OF THE HEADER ON SCROLL
+d3.select(window).on('scroll', function() {
+    var scrollPos = window.scrollY;
+    console.log('scrollz');
+    if (scrollPos > 100) d3.select('#header').transition().style('top', '-88px');
+    else d3.select('#header').transition().style('top', '0px');
+});
+
 
 
 
