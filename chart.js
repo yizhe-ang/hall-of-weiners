@@ -114,11 +114,11 @@ m.renderHeader = function() {
                             h = parseInt(tooltip.style('height'));
                         var x = parseInt(header.attr('x')),
                             y = parseInt(header.attr('y'));
-                        console.log(w/2);
+                        // console.log(w/2);
 
                         tooltip.style('left', x-(w/2)+'px')
                                 .style('top', y+37+'px');
-                        console.log(tooltip.style('left'));
+                        // console.log(tooltip.style('left'));
 
                     })
                     .on('mouseout', function(d) {
@@ -383,7 +383,7 @@ m.renderChart = function() {
 // HIDING OF THE HEADER ON SCROLL
 d3.select(window).on('scroll', function() {
     var scrollPos = window.scrollY;
-    console.log('scrollz');
+    // console.log('scrollz');
     if (scrollPos > 100) d3.select('#header').transition().style('top', '-88px');
     else d3.select('#header').transition().style('top', '0px');
 });
