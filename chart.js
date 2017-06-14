@@ -48,7 +48,7 @@ var strip = function(string) {
 };
 
 // dimensions
-var margin = {top:20, bottom:10, left:180, right:10};
+var margin = {top:10, bottom:10, left:180, right:10};
 
 
 // WHAT TO DO WITH DATA???
@@ -281,7 +281,11 @@ m.renderChart = function() {
                             .attr('src', 'images/'+ d.images[0])
                             .attr('height', '50px')
                             .style('opacity', 1.0);
-
+                    var img = document.getElementById('team-img');
+                    img.onload = function() {
+                        tooltip.transition()
+                                .style('opacity', 1.0);
+                    };
                             // .style('opacity', 0);
                     // img.transition()
                     //     .style('opacity', 1.0);
@@ -295,8 +299,7 @@ m.renderChart = function() {
                     d3.select('#'+strip(d.event))
                         .style('filter', 'url(#brightness)');
                         // .classed('brighten', true);
-                    tooltip.transition()
-                            .style('opacity', 1.0);
+
                 })
                 .on('mouseout', function(d) {
                     d3.select('#'+strip(d.event))
