@@ -12,7 +12,7 @@ var VALVE_EVENTS = [
                 {event:'The International 2016', img:'the_international', date:'2016-08-02'},
                 {event:'The Boston Major 2016', img:'fall_major', date:'2016-12-03'},
                 {event:'The Kiev Major 2017', img:'winter_major', date:'2017-04-27'},
-                {event:'The International 2017', img:'the_international', date:'2017-08-07'},
+                // {event:'The International 2017', img:'the_international', date:'2017-08-07'},
             ];
 
 var PLACEMENTS = ['5th-8th',
@@ -83,7 +83,7 @@ m.renderHeader = function() {
         var boundingRect = chartHolder.node().getBoundingClientRect();
         var width = boundingRect.width;
         var height = boundingRect.height;
-        var cellWidth = (width-margin.left-margin.right)/12.0;
+        var cellWidth = (width-margin.left-margin.right)/11.0;
 
         var svg = chartHolder.select('svg')
                     .attr('width', width)
@@ -150,7 +150,7 @@ m.renderChart = function() {
     var rowHeight = 50;
     var lineLength = m.data.length*rowHeight; // 50px for each row height
     var height = lineLength;
-    var cellWidth = (width-margin.left-margin.right)/12.0;
+    var cellWidth = (width-margin.left-margin.right)/11.0;
     var tooltip = d3.select('#content-tooltip');
     // var color = d3.interpolateRgb('white', '#FFEB3B'); // color interpolater for the table rows
     // var rowColor = function(d) {
